@@ -1,26 +1,38 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <history>
    <processor signature="arm-none-eabi-gcc 4.8.1 mingw32 -mcpu=cortex-m4 -mthumb -g2 -Wall -O0 -c -DSTM32F429ZI -DSTM32F429xx -I..\..\..\..\..\..\..\Desktop\CoIDE\workspace -I..\..\..\..\..\..\..\Desktop\CoIDE\workspace\Test01 -I..\..\..\..\..\..\..\Desktop\CoIDE\workspace\Test01\app -I..\..\..\..\..\..\..\Desktop\CoIDE\workspace\stm32cubef4\STM32Cube_FW_F4_V1.5.0\Drivers\STM32F4xx_HAL_Driver\Inc -I..\..\..\..\..\..\..\Desktop\CoIDE\workspace\stm32cubef4\STM32Cube_FW_F4_V1.5.0\Drivers\CMSIS\Include -I..\..\..\..\..\..\..\Desktop\CoIDE\workspace\stm32cubef4\STM32Cube_FW_F4_V1.5.0\Drivers\STM32F4xx_HAL_Driver -I..\..\..\..\..\..\..\Desktop\CoIDE\workspace\stm32cubef4\STM32Cube_FW_F4_V1.5.0\Drivers\CMSIS -I..\..\..\..\..\..\..\Desktop\CoIDE\workspace\stm32cubef4\STM32Cube_FW_F4_V1.5.0\Drivers">
-      <target file="stm32f4xx_hal.o" lastModified="14d77923dee">
-         <source file="..\..\..\..\stm32cubef4\STM32Cube_FW_F4_V1.5.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.c" lastModified="14c0ebff760"/>
-      </target>
-      <target file="stm32f4xx_hal_cortex.o" lastModified="14d77923fa4">
-         <source file="..\..\..\..\stm32cubef4\STM32Cube_FW_F4_V1.5.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.c" lastModified="14c0ebff760"/>
-      </target>
-      <target file="stm32f4xx_hal_gpio.o" lastModified="14d7792410b">
-         <source file="..\..\..\..\stm32cubef4\STM32Cube_FW_F4_V1.5.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.c" lastModified="14c0ebff760"/>
-      </target>
-      <target file="system_stm32f4xx.o" lastModified="14d7792404f">
-         <source file="..\..\..\app\system_stm32f4xx.c" lastModified="14c21974cd0"/>
-      </target>
-      <target file="stm32f4xx_hal_rcc.o" lastModified="14d77923ec9">
+      <target file="stm32f4xx_hal_rcc.o" lastModified="14d9116a1fa">
          <source file="..\..\..\..\stm32cubef4\STM32Cube_FW_F4_V1.5.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.c" lastModified="14c0ebff760"/>
       </target>
-      <target file="main.o" lastModified="14d77923c58">
-         <source file="..\..\..\app\main.c" lastModified="14d65d8bfb6"/>
+      <target file="stm32f4xx_hal.o" lastModified="14d91169fe6">
+         <source file="..\..\..\..\stm32cubef4\STM32Cube_FW_F4_V1.5.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.c" lastModified="14c0ebff760"/>
       </target>
-      <target file="startup_stm32f429xx.o" lastModified="14d77923d13">
+      <target file="LED.o" lastModified="14d9188fac4">
+         <source file="..\..\..\app\LED.c" lastModified="14d9185ebe3"/>
+      </target>
+      <target file="Time.o" lastModified="14d911a9403">
+         <source file="..\..\..\app\Time.c" lastModified="14d911a840f"/>
+      </target>
+      <target file="system_stm32f4xx.o" lastModified="14d9116a4f7">
+         <source file="..\..\..\app\system_stm32f4xx.c" lastModified="14c21974cd0"/>
+      </target>
+      <target file="startup_stm32f429xx.o" lastModified="14d91169d56">
          <source file="..\..\..\app\startup_stm32f429xx.s" lastModified="14c0ebfd050"/>
+      </target>
+      <target file="stm32f4xx_hal_cortex.o" lastModified="14d9116a3fd">
+         <source file="..\..\..\..\stm32cubef4\STM32Cube_FW_F4_V1.5.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.c" lastModified="14c0ebff760"/>
+      </target>
+      <target file="LED2.o" lastModified="14d918984e5">
+         <source file="..\..\..\app\LED2.c" lastModified="14d91897fd4"/>
+      </target>
+      <target file="main.o" lastModified="14d9188f65f">
+         <source file="..\..\..\app\main.c" lastModified="14d9188ea1a"/>
+      </target>
+      <target file="stm32f4xx_hal_gpio.o" lastModified="14d9116a6ad">
+         <source file="..\..\..\..\stm32cubef4\STM32Cube_FW_F4_V1.5.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.c" lastModified="14c0ebff760"/>
+      </target>
+      <target file="LED3.o" lastModified="14d9189860e">
+         <source file="..\..\..\app\LED3.c" lastModified="14d91897fe4"/>
       </target>
    </processor>
 </history>
