@@ -9,7 +9,7 @@ State blinkLED3(State state)
 	static uint32_t blinkTime = 0;
 	switch(state)
 	{
-		case INITIAL: turnOffLED(LED3, PORT_B);
+		case INITIAL: turnOffLED(LED5, PORT_B);
 					  if(readUserButton())
 						  state = LED_OFF;
 					  else
@@ -17,7 +17,7 @@ State blinkLED3(State state)
 					  break;
 		case LED_OFF: if(isTimerExpire(ONE_SEC, previousTime))
 					  {
-							turnOnLED(LED3, PORT_B);
+							turnOnLED(LED5, PORT_B);
 							previousTime = getCurrentTime();
 							state = LED_ON;
 					  }
@@ -31,14 +31,15 @@ State blinkLED3(State state)
 					 {
 						 if(isTimerExpire(ONE_SEC, previousTime))
 						 {
-							 turnOffLED(LED3, PORT_B);
+							 turnOffLED(LED5, PORT_B);
 							 previousTime = getCurrentTime();
 							 state = LED_OFF;
 							 blinkTime++;
 						 }
 					 }
 		   	   	   	 break;
-		case WAIT_FOR_RELEASE: if(!readUserButton())
+		case WAIT_FOR_RELEASE: turnOffLED(LED3, PORT_B);
+                               if(!readUserButton())
 									state = WAIT_FOR_RELEASE;
 							   else
 								   state = INITIAL;
