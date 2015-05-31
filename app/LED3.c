@@ -39,7 +39,7 @@ State blinkLED3(State state)
 					 }
 		   	   	   	 break;
 		case WAIT_FOR_RELEASE: turnOffLED(LED3, PORT_B);
-                               if(!readUserButton())
+                               if(readUserButton())
 									state = WAIT_FOR_RELEASE;
 							   else
 								   state = INITIAL;
