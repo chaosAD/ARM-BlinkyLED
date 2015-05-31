@@ -43,6 +43,7 @@ State blinkLED3(State state)
 									state = WAIT_FOR_RELEASE;
 							   else
 								   state = INITIAL;
+                               break;
 		default: state = INITIAL;
 	}
 
