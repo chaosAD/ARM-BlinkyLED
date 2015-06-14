@@ -1,7 +1,9 @@
-#include "stm32f4xx_hal.h"
 #include "LED.h"
 #include "Time.h"
 #include "Button.h"
+
+extern uint32_t counter;
+extern uint32_t currentTime;
 
 State blinkLED2(State state)
 {
@@ -9,18 +11,19 @@ State blinkLED2(State state)
 	static uint32_t dutyCycle = ONE_SEC;
 	switch(state)
 	{
-		case INITIAL: turnOffLED(LED4, PORT_G);
+		case INITIAL: turnOffLED(PORTG, LED4);
 					  state = LED_OFF;
 					  break;
 		case LED_OFF: if(readUserButton())
 							dutyCycle = ONE_HUND_MILISEC;
 					  else
-						  	dutyCycle  = ONE_SEC;
+						  	dutyCycle  = FIVE_HUND_MILISEC;
 
-					  if(isTimerExpire(dutyCycle, previousTime))
+					  if(isTimerExpire(dutyCycle, &previousTime))
 					  {
-							turnOnLED(LED4, PORT_G);
-							previousTime = getCurrentTime();
+							turnOnLED(PORTG, LED4);
+							//previousTime = getCurrentTime();
+							previousTime = currentTime;
 							state = LED_ON;
 							//currentTime = 0;
 					  }
@@ -28,12 +31,13 @@ State blinkLED2(State state)
 		case LED_ON: if(readUserButton())
 						dutyCycle = ONE_HUND_MILISEC;
 					 else
-						 dutyCycle  = ONE_SEC;
+						 dutyCycle  = FIVE_HUND_MILISEC;
 
-					 if(isTimerExpire(dutyCycle, previousTime))
+					 if(isTimerExpire(dutyCycle, &previousTime))
 					 {
-							turnOffLED(LED4, PORT_G);
-							previousTime = getCurrentTime();
+							turnOffLED(PORTG, LED4);
+							//previousTime = getCurrentTime();
+							previousTime = currentTime;
 							state = LED_OFF;
 							//currentTime = 0;
 					 }

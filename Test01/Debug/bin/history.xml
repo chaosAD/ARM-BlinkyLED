@@ -1,18 +1,19 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <history>
-   <processor signature="4.9.3 -mcpu=cortex-m4 -mthumb -g2 -Map=Test01.map -O0 --gc-sections -LC:/Users/Asus/Desktop/CoIDE/workspace/Test01 -TC:/Users/Asus/Desktop/CoIDE/workspace/Test01/stm32f407vg_flash.ld -g">
-      <target file="Test01.elf" lastModified="14d9189894a">
-         <source file="..\obj\LED3.o" lastModified="14d9189860e"/>
-         <source file="..\obj\stm32f4xx_hal_cortex.o" lastModified="14d9116a3fd"/>
-         <source file="..\obj\system_stm32f4xx.o" lastModified="14d9116a4f7"/>
-         <source file="..\obj\stm32f4xx_hal.o" lastModified="14d91169fe6"/>
-         <source file="..\obj\Time.o" lastModified="14d911a9403"/>
-         <source file="..\obj\LED.o" lastModified="14d9188fac4"/>
-         <source file="..\obj\stm32f4xx_hal_gpio.o" lastModified="14d9116a6ad"/>
-         <source file="..\obj\LED2.o" lastModified="14d918984e5"/>
-         <source file="..\obj\stm32f4xx_hal_rcc.o" lastModified="14d9116a1fa"/>
-         <source file="..\obj\startup_stm32f429xx.o" lastModified="14d91169d56"/>
-         <source file="..\obj\main.o" lastModified="14d9188f65f"/>
+   <processor signature="4.9.3 -mcpu=cortex-m4 -mthumb -g2 -Map=Test01.map -O0 --gc-sections -LC:/Users/Asus/Desktop/CoIDE/workspace/BlinkyLED -TC:/Users/Asus/Desktop/CoIDE/workspace/BlinkyLED/stm32f407vg_flash.ld -g">
+      <target file="Test01.elf" lastModified="14df2e63181">
+         <source file="..\obj\LED3.o" lastModified="14df2e61ed3"/>
+         <source file="..\obj\stm32f4xx_hal_cortex.o" lastModified="14df2e6118a"/>
+         <source file="..\obj\Button.o" lastModified="14df2e62cf1"/>
+         <source file="..\obj\system_stm32f4xx.o" lastModified="14df2e61393"/>
+         <source file="..\obj\stm32f4xx_hal.o" lastModified="14df2e60a3c"/>
+         <source file="..\obj\Time.o" lastModified="14df2e6069d"/>
+         <source file="..\obj\LED1.o" lastModified="14df2e6192b"/>
+         <source file="..\obj\stm32f4xx_hal_gpio.o" lastModified="14df2e616ad"/>
+         <source file="..\obj\LED2.o" lastModified="14df2e61c01"/>
+         <source file="..\obj\stm32f4xx_hal_rcc.o" lastModified="14df2e60e05"/>
+         <source file="..\obj\startup_stm32f429xx.o" lastModified="14df2e603c6"/>
+         <source file="..\obj\main.o" lastModified="14df2e6034d"/>
       </target>
    </processor>
 </history>
