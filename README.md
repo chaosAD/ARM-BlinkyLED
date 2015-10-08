@@ -29,6 +29,6 @@ Flash
 =====
 To flash hardware `release` version, type:
 ```
-rake hw:release
+rake hw:flash
 ```
 This command might trigger a re-build if some of the source code is modified. This command relies on `ST-LINK_CLI.exe` program. The program can be obtained from [here](http://www.st.com/web/en/catalog/tools/PF258168). You need to include the path to that program into the system path, so that the build system is able to invoke it. 
