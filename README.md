@@ -1,7 +1,7 @@
 
 Overview
 ========
-I use this simple blinky project to show how `cbuild` script can be used to facilitate building process and flashing the built program into the target board (**STM32F429-Discovery**).
+I use this simple blinky project to show how `cbuild` script can be used to facilitate building process and flashing the built program into the target board (**STM32F429-Discovery**) using `rake`. The script extracts all necessary file names to build the project from CoIDE's project file (in this case `Blinky.coproj`). This means you can update (adding or deleting filenames) your project in CoIDE and the script will build using the latest update automatically.
 
 The `Drivers/` folder contains only the necessary STM32Fxx and CMSIS drivers to keep the size to the minimal. The `scripts/` folder contains `cbuild` and other scripts.
 
