@@ -1,5 +1,5 @@
 #FLASHER = "\"/C/Program Files (x86)/STMicroelectronics/STM32 ST-LINK Utility/ST-LINK Utility/ST-LINK_CLI\" "
-FLASHER = "ST-LINK_CLI "
+FLASHER = "ST-LINK_CLI.exe "
 
 # Load build script to help build C program
 load "scripts/cbuild.rb"
@@ -28,30 +28,33 @@ config = {
                     :define => '-D'}
 }
 
+#OUTPUT_FILE = 'build/release/hw/Blinky.elf'
 namespace :hw do
   task :prepare_release do
     filenames = getAllSrcFiles("Blinky.coproj")
     dep_list = createCompilationDependencyList(filenames, ['c', '.c++', '.s', 'cpp', 'asm'], '.', '.o')
     dep_list = compile_list(dep_list, '.', 'build/release/hw', '.', config)
+  #  p dep_list
     link_all(getDependers(dep_list), 'build/release/hw/Blinky.elf', config)
 
     file 'build/release/hw/Blinky.hex' => 'build/release/hw/Blinky.elf' do |n|
       puts "converting #{n.prerequisites[0]} to hex..."
-      system "arm-none-eabi-objcopy -O ihex #{n.prerequisites[0]} #{n.name}"
+      sys_cli "arm-none-eabi-objcopy -O ihex #{n.prerequisites[0]} #{n.name}"
     end
   end
-  CLEAN.include('build/release/hw') if File.exist? 'build/release/hw'
+#  CLEAN.include('build/release/hw') if File.exist? 'build/release/hw'
 
   desc 'Build hardware release code'
   task :release => :prepare_release do
   #  p Rake.application.tasks
-    Rake::Task["build/release/hw/Blinky.elf"].invoke
+    Rake::Task['build/release/hw/Blinky.elf'].invoke
+  #  sh "cp #{OUTPUT_FILE} ."
   end
 
 
   desc 'Flash program and run test'
   task :flash => :prepare_release do
     Rake::Task["build/release/hw/Blinky.hex"].invoke
-    system (FLASHER + '-P build/release/hw/Blinky.hex -V while_programming -Rst -Run')
+    sys_cli FLASHER + '-P build/release/hw/Blinky.hex -V while_programming -Rst -Run'
   end
 end

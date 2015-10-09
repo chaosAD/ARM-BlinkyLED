@@ -90,10 +90,6 @@
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Blinky/Hardware/stm32f4xx_hal.c"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="8115" selectionTopPixel="0"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx_hal_flash.h" partName="stm32f4xx_hal_flash.h" title="stm32f4xx_hal_flash.h" tooltip="C:\Vennie\Projects\STM32F4\ARM-BlinkyLED\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash.h" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" uri="file:/C:/Vennie/Projects/STM32F4/ARM-BlinkyLED/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="13098" selectionTopPixel="4395"/>
-</editor>
 </editors>
 <views>
 <view id="org.eclipse.ui.views.ProgressView" partName="Progress">
@@ -117,9 +113,6 @@
 <view id="org.eclipse.debug.ui.DebugView" partName="Debug">
 <viewState/>
 </view>
-<view id="org.coocox.component.ui.view.ComponentView" partName="Component View">
-<viewState/>
-</view>
 <view id="org.eclipse.ui.console.ConsoleView" partName="Console">
 <viewState/>
 </view>
@@ -141,6 +134,8 @@
 <alwaysOnActionSet id="org.eclipse.ui.actionSet.keyBindings"/>
 <alwaysOnActionSet id="org.eclipse.ui.actionSet.openFiles"/>
 <alwaysOnActionSet id="org.eclipse.debug.ui.breakpointActionSet"/>
+<alwaysOnActionSet id="org.coocox.userspace.actionSet"/>
+<alwaysOnActionSet id="org.coocox.component.ui.actionSet"/>
 <hide_menu_item_id id="org.coocox.codebugger.configuration.showMemoryAction"/>
 <hide_menu_item_id id="org.eclipse.jdt.ui.refactoring.menu"/>
 <hide_menu_item_id id="org.coocox.codebugger.configuration.ShowDisassemblyAction"/>
@@ -159,7 +154,6 @@
 <hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
 <hide_toolbar_item_id id="org.eclipse.debug.ui.commands.TerminateAndRelaunch"/>
 <view id="org.coocox.builder.ui.views.ProjectView"/>
-<view id="org.coocox.component.ui.view.ComponentView"/>
 <view id="org.eclipse.ui.console.ConsoleView"/>
 <view id="org.eclipse.ui.views.ContentOutline"/>
 <fastViewBars/>
@@ -168,10 +162,9 @@
 <info folder="true" part="org.eclipse.ui.internal.ViewStack@1099a3e">
 <folder activePageID="org.coocox.builder.ui.views.ProjectView" appearance="2" expanded="2">
 <page content="org.coocox.builder.ui.views.ProjectView" label="Project"/>
-<page content="org.coocox.component.ui.view.ComponentView" label="Component View"/>
+<page content="org.coocox.component.ui.view.ComponentView" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
-<part id="1"/>
 </presentation>
 </folder>
 </info>
@@ -390,44 +383,47 @@
 <actionBarAdvisor/>
 </window>
 <mruList>
-<file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx_hal_flash.h" tooltip="C:\Vennie\Projects\STM32F4\ARM-BlinkyLED\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash.h">
-<persistable uri="file:/C:/Vennie/Projects/STM32F4/ARM-BlinkyLED/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.asm.AsmEditor" name="Scheduler.s" tooltip="Test01/Scheduler.s">
+<persistable path="/Test01/Scheduler.s"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx_hal.c" tooltip="Blinky/Hardware/stm32f4xx_hal.c">
-<persistable path="/Blinky/Hardware/stm32f4xx_hal.c"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.asm.AsmEditor" name="startup_stm32f429xx.s" tooltip="Test01/startup_stm32f429xx.s">
+<persistable path="/Test01/startup_stm32f429xx.s"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="Button.h" tooltip="Blinky/Button.h">
-<persistable path="/Blinky/Button.h"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="Task.h" tooltip="Test01/Task.h">
+<persistable path="/Test01/Task.h"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="LED.h" tooltip="Blinky/LED.h">
-<persistable path="/Blinky/LED.h"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="Task.c" tooltip="Test01/Task.c">
+<persistable path="/Test01/Task.c"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="LED1.c" tooltip="Blinky/LED1.c">
-<persistable path="/Blinky/LED1.c"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx_it.h" tooltip="Test01/stm32f4xx_it.h">
+<persistable path="/Test01/stm32f4xx_it.h"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="LED2.c" tooltip="Blinky/LED2.c">
-<persistable path="/Blinky/LED2.c"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx_it.c" tooltip="Test01/stm32f4xx_it.c">
+<persistable path="/Test01/stm32f4xx_it.c"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="LED3.c" tooltip="Blinky/LED3.c">
-<persistable path="/Blinky/LED3.c"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.asm.AsmEditor" name="assembly.s" tooltip="Test01/assembly.s">
+<persistable path="/Test01/assembly.s"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" tooltip="Blinky/main.c">
-<persistable path="/Blinky/main.c"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="Time.c" tooltip="Test01/RTOS/Time.c">
+<persistable path="/Test01/RTOS/Time.c"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="Time.h" tooltip="Blinky/Time.h">
-<persistable path="/Blinky/Time.h"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="LiteTasker.h" tooltip="Test01/RTOS/LiteTasker.h">
+<persistable path="/Test01/RTOS/LiteTasker.h"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="Time.c" tooltip="Blinky/Time.c">
-<persistable path="/Blinky/Time.c"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="Led1SM.c" tooltip="Test01/LedAndButton/Led1SM.c">
+<persistable path="/Test01/LedAndButton/Led1SM.c"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="system_stm32f4xx.h" tooltip="Blinky/system_stm32f4xx.h">
-<persistable path="/Blinky/system_stm32f4xx.h"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="Time.h" tooltip="Test01/RTOS/Time.h">
+<persistable path="/Test01/RTOS/Time.h"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="system_stm32f4xx.c" tooltip="Blinky/system_stm32f4xx.c">
-<persistable path="/Blinky/system_stm32f4xx.c"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="UserLed.h" tooltip="Test01/LedAndButton/UserLed.h">
+<persistable path="/Test01/LedAndButton/UserLed.h"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx.h" tooltip="Blinky/stm32f4xx.h">
-<persistable path="/Blinky/stm32f4xx.h"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.h" tooltip="Test01/main.h">
+<persistable path="/Test01/main.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="core_cm4.h" tooltip="Test01/Core/core_cm4.h">
+<persistable path="/Test01/Core/core_cm4.h"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx_hal_conf.h" tooltip="Blinky/stm32f4xx_hal_conf.h">
 <persistable path="/Blinky/stm32f4xx_hal_conf.h"/>

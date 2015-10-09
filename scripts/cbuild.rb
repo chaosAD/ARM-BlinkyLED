@@ -60,6 +60,11 @@ def optionize(option_key, data, err_msg)
   end
 end
 
+def sys_cli(command)
+  result = system command
+  sh command if result == nil
+end
+
 def compile_list(list, src_path, obj_path, exe_path, config)
   return_list = {}
 
@@ -124,7 +129,7 @@ def compile_list(list, src_path, obj_path, exe_path, config)
           else
             puts("compiling #{n.name}...")
           end
-          system(command)
+          sys_cli(command)
         end
 #        p depender
         CLEAN.include(depender)
@@ -148,14 +153,14 @@ def compile_list(list, src_path, obj_path, exe_path, config)
                     ' ' + optionize('', config[:linker_options], nil)
           # Compile the command
           command = linker + ' ' +                                            \
-                    options + ' ' + dependees.join(' ') + ' ' +               \
+                    dependees.join(' ') + ' ' +  options + ' ' +              \
                     opt_out_file + ' ' + n.name
           if config[:verbose] == :yes
             puts(command)
           else
             puts("linking #{n.name}...")
           end
-          system(command)
+          sys_cli(command)
         end
 #        p depender
         CLEAN.include(depender)

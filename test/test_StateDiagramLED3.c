@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include "unity.h"
 #include "StateDiagramLED3.h"
 #include "mock_LED.h"
@@ -155,4 +156,8 @@ void test_blinkLED3_given_WAIT_FOR_RELEASE_state_should_goto_INITIAL_state_if_bu
     state = blinkLED3(state);
 
     TEST_ASSERT_EQUAL(INITIAL, state);
+}
+
+void test_build_hardware_code_then_flash_into_the_ARM_development_board() {
+  system("rake hw:flash");
 }
