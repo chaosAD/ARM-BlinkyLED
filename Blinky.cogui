@@ -30,13 +30,20 @@
 <part id="12"/>
 <part id="13"/>
 <part id="14"/>
+<part id="15"/>
+<part id="16"/>
+<part id="17"/>
+<part id="18"/>
+<part id="19"/>
+<part id="20"/>
+<part id="21"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="Button.c" partName="Button.c" path="C:/Vennie/Projects/STM32F4/ARM-BlinkyLED/app/Button.c" title="Button.c" tooltip="C:/Vennie/Projects/STM32F4/ARM-BlinkyLED/app/Button.c" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Blinky/Button.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="378" selectionTopPixel="0"/>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="Button.c" partName="Button.c" path="C:/ProgramFiles/CoIDE/workspace/ARM-BlinkyLED/app/Button.c" title="Button.c" tooltip="C:/ProgramFiles/CoIDE/workspace/ARM-BlinkyLED/app/Button.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Blinky/App/Button.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="143" selectionTopPixel="0"/>
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx_hal_conf.h" partName="stm32f4xx_hal_conf.h" path="C:/Vennie/Projects/STM32F4/ARM-BlinkyLED/app/stm32f4xx_hal_conf.h" title="stm32f4xx_hal_conf.h" tooltip="C:/Vennie/Projects/STM32F4/ARM-BlinkyLED/app/stm32f4xx_hal_conf.h" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Blinky/stm32f4xx_hal_conf.h"/>
@@ -62,10 +69,6 @@
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Blinky/Time.h"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
 </editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="C:/Vennie/Projects/STM32F4/ARM-BlinkyLED/app/main.c" title="main.c" tooltip="C:/Vennie/Projects/STM32F4/ARM-BlinkyLED/app/main.c" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Blinky/main.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
-</editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="LED3.c" partName="LED3.c" path="C:/Vennie/Projects/STM32F4/ARM-BlinkyLED/app/LED3.c" title="LED3.c" tooltip="C:/Vennie/Projects/STM32F4/ARM-BlinkyLED/app/LED3.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Blinky/LED3.c"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
@@ -78,17 +81,53 @@
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Blinky/LED1.c"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
 </editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="LED.h" partName="LED.h" path="C:/Vennie/Projects/STM32F4/ARM-BlinkyLED/app/LED.h" title="LED.h" tooltip="C:/Vennie/Projects/STM32F4/ARM-BlinkyLED/app/LED.h" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Blinky/LED.h"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="LED.h" partName="LED.h" path="C:/ProgramFiles/CoIDE/workspace/ARM-BlinkyLED/app/LED.h" title="LED.h" tooltip="C:/ProgramFiles/CoIDE/workspace/ARM-BlinkyLED/app/LED.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Blinky/App/LED.h"/>
+<editorState selectionHorizontalPixel="51" selectionLength="0" selectionOffset="878" selectionTopPixel="437"/>
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="Button.h" partName="Button.h" path="C:/Vennie/Projects/STM32F4/ARM-BlinkyLED/app/Button.h" title="Button.h" tooltip="C:/Vennie/Projects/STM32F4/ARM-BlinkyLED/app/Button.h" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Blinky/Button.h"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
 </editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx_hal.c" partName="stm32f4xx_hal.c" path="C:/Vennie/Projects/STM32F4/ARM-BlinkyLED/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c" title="stm32f4xx_hal.c" tooltip="C:/Vennie/Projects/STM32F4/ARM-BlinkyLED/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx_hal.c" partName="stm32f4xx_hal.c" path="C:/ProgramFiles/CoIDE/workspace/ARM-BlinkyLED/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c" title="stm32f4xx_hal.c" tooltip="C:/ProgramFiles/CoIDE/workspace/ARM-BlinkyLED/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Blinky/Hardware/stm32f4xx_hal.c"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="8115" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="C:/ProgramFiles/CoIDE/workspace/ARM-BlinkyLED/app/main.c" title="main.c" tooltip="C:/ProgramFiles/CoIDE/workspace/ARM-BlinkyLED/app/main.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Blinky/App/main.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="198" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f429xx.h" partName="stm32f429xx.h" path="C:/ProgramFiles/CoIDE/workspace/ARM-BlinkyLED/Config/stm32f429xx.h" title="stm32f429xx.h" tooltip="C:/ProgramFiles/CoIDE/workspace/ARM-BlinkyLED/Config/stm32f429xx.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Blinky/Config/stm32f429xx.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.asm.AsmEditor" name="startup_stm32f429xx.s" partName="startup_stm32f429xx.s" path="C:/ProgramFiles/CoIDE/workspace/ARM-BlinkyLED/Config/startup_stm32f429xx.s" title="startup_stm32f429xx.s" tooltip="C:/ProgramFiles/CoIDE/workspace/ARM-BlinkyLED/Config/startup_stm32f429xx.s" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Blinky/Config/startup_stm32f429xx.s"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4375" selectionTopPixel="1767"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="system_stm32f4xx.c" partName="system_stm32f4xx.c" path="C:/ProgramFiles/CoIDE/workspace/ARM-BlinkyLED/Config/system_stm32f4xx.c" title="system_stm32f4xx.c" tooltip="C:/ProgramFiles/CoIDE/workspace/ARM-BlinkyLED/Config/system_stm32f4xx.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Blinky/Config/system_stm32f4xx.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="575" selectionTopPixel="0"/>
+</editor>
+<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="Gpio.c" partName="Gpio.c" path="C:/ProgramFiles/CoIDE/workspace/ARM-BlinkyLED/app/Gpio.c" title="Gpio.c" tooltip="C:/ProgramFiles/CoIDE/workspace/ARM-BlinkyLED/app/Gpio.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Blinky/App/Gpio.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="555" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="Gpio.h" partName="Gpio.h" path="C:/ProgramFiles/CoIDE/workspace/ARM-BlinkyLED/app/Gpio.h" title="Gpio.h" tooltip="C:/ProgramFiles/CoIDE/workspace/ARM-BlinkyLED/app/Gpio.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Blinky/App/Gpio.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="8" selectionOffset="230" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx_hal_gpio.h" partName="stm32f4xx_hal_gpio.h" path="C:/ProgramFiles/CoIDE/workspace/ARM-BlinkyLED/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h" title="stm32f4xx_hal_gpio.h" tooltip="C:/ProgramFiles/CoIDE/workspace/ARM-BlinkyLED/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Blinky/Hardware/stm32f4xx_hal_gpio.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2085" selectionTopPixel="980"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx_hal.h" partName="stm32f4xx_hal.h" path="C:/ProgramFiles/CoIDE/workspace/ARM-BlinkyLED/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h" title="stm32f4xx_hal.h" tooltip="C:/ProgramFiles/CoIDE/workspace/ARM-BlinkyLED/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Blinky/Hardware/stm32f4xx_hal.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2494" selectionTopPixel="4054"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx_hal_rcc.h" partName="stm32f4xx_hal_rcc.h" path="C:/ProgramFiles/CoIDE/workspace/ARM-BlinkyLED/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h" title="stm32f4xx_hal_rcc.h" tooltip="C:/ProgramFiles/CoIDE/workspace/ARM-BlinkyLED/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Blinky/Hardware/stm32f4xx_hal_rcc.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="33" selectionOffset="2514" selectionTopPixel="660"/>
 </editor>
 </editors>
 <views>
@@ -96,15 +135,23 @@
 <viewState/>
 </view>
 <view id="org.coocox.builder.ui.views.ProjectView" partName="Project">
-<viewState CommonNavigator.LINKING_ENABLED="0" horizontalPosition="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0" verticalPosition="7">
+<viewState CommonNavigator.LINKING_ENABLED="0" horizontalPosition="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0" verticalPosition="0">
 <expanded>
 <element path="/Blinky"/>
+<element path="/Blinky/App"/>
+<element path="/Blinky/Config"/>
 <element path="/Blinky/Core"/>
 <element path="/Blinky/Hardware"/>
 </expanded>
 <selection>
-<element path="/Blinky/stm32f4xx_hal_conf.h"/>
+<element path="/Blinky/App/Gpio.c"/>
 </selection>
+</viewState>
+</view>
+<view id="org.eclipse.search.ui.views.SearchView" partName="Search">
+<viewState isPinned="false">
+<view IMemento.internal.id="" org.eclipse.search.lastActivation="0"/>
+<view IMemento.internal.id="org.eclipse.cdt.ui.pdomSearchViewPage" definitionColumnWidth="150" locationColumnWidth="300" matchColumnWidth="300" org.eclipse.search.lastActivation="1" org.eclipse.search.resultpage.layout="2" showEnclosingDefinitions="true"/>
 </viewState>
 </view>
 <view id="org.coocox.codebugger.trace.ui.traceview" partName="Semihosting">
@@ -155,6 +202,7 @@
 <hide_toolbar_item_id id="org.eclipse.debug.ui.commands.TerminateAndRelaunch"/>
 <view id="org.coocox.builder.ui.views.ProjectView"/>
 <view id="org.eclipse.ui.console.ConsoleView"/>
+<view id="org.eclipse.search.ui.views.SearchView"/>
 <view id="org.eclipse.ui.views.ContentOutline"/>
 <fastViewBars/>
 <layout>
@@ -174,15 +222,17 @@
 <page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@1d84352" ratio="0.73748475" ratioLeft="604" ratioRight="215" relationship="4" relative="org.eclipse.ui.internal.ViewStack@1099a3e">
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@1d84352" ratio="0.61865795" ratioLeft="378" ratioRight="233" relationship="4" relative="org.eclipse.ui.internal.ViewStack@1099a3e">
 <folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
+<page content="org.eclipse.search.ui.views.SearchView" label="Search"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
+<part id="1"/>
 </presentation>
 </folder>
 </info>
-<info part="org.eclipse.ui.editorss" ratio="0.19594122" ratioLeft="280" ratioRight="1149" relationship="2" relative="org.eclipse.ui.internal.ViewStack@1099a3e"/>
+<info part="org.eclipse.ui.editorss" ratio="0.25126904" ratioLeft="297" ratioRight="885" relationship="2" relative="org.eclipse.ui.internal.ViewStack@1099a3e"/>
 <info folder="true" part="org.eclipse.ui.internal.ViewStack@16d7cc7" ratio="0.750478" ratioLeft="785" ratioRight="261" relationship="2" relative="org.eclipse.ui.editorss">
 <folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
@@ -206,6 +256,7 @@
 <alwaysOnActionSet id="org.eclipse.ui.actionSet.keyBindings"/>
 <alwaysOnActionSet id="org.eclipse.ui.actionSet.openFiles"/>
 <alwaysOnActionSet id="org.eclipse.debug.ui.breakpointActionSet"/>
+<alwaysOnActionSet id="org.coocox.component.ui.actionSet"/>
 <alwaysOnActionSet id="org.eclipse.debug.ui.debugActionSet"/>
 <hide_menu_item_id id="org.coocox.builder.ui.newFolder"/>
 <hide_menu_item_id id="org.coocox.welcome.ui.action.repository"/>
@@ -237,8 +288,8 @@
 <hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
 <hide_toolbar_item_id id="org.coocox.builder.ui.build"/>
 <hide_toolbar_item_id id="org.coocox.welcome.ui.action.welcome"/>
-<hide_toolbar_item_id id="org.coocox.codebugger.configuration.coideProgramDownloadAction"/>
 <hide_toolbar_item_id id="org.coocox.component.ui.ShowRepositoryAction"/>
+<hide_toolbar_item_id id="org.coocox.codebugger.configuration.coideProgramDownloadAction"/>
 <view id="org.eclipse.ui.views.ProgressView"/>
 <view id="org.eclipse.ui.console.ConsoleView"/>
 <view id="org.eclipse.debug.ui.DebugView"/>
@@ -247,46 +298,63 @@
 <view id="org.eclipse.debug.ui.VariableView"/>
 <fastViewBars/>
 <viewLayoutRec closeable="false" id="org.eclipse.debug.ui.DebugView"/>
-<layout>&#x0A;<mainWindow>&#x0A;<info folder="true" part="org.eclipse.ui.internal.ViewStack@1a7bf26">&#x0A;<folder activePageID="org.coocox.builder.ui.views.ProjectView" appearance="2" expanded="2">&#x0A;<page content="org.coocox.builder.ui.views.ProjectView" label="Project"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+<layout>
+<mainWindow>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@1a7bf26">
+<folder activePageID="org.coocox.builder.ui.views.ProjectView" appearance="2" expanded="2">
+<page content="org.coocox.builder.ui.views.ProjectView" label="Project"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
 </presentation>
 </folder>
 </info>
-<info folder="true" part="stickyFolderRight" ratio="0.75" ratioLeft="954" ratioRight="318" relationship="2" relative="org.eclipse.ui.internal.ViewStack@1a7bf26">&#x0A;<folder appearance="2" expanded="2">&#x0A;<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<info folder="true" part="stickyFolderRight" ratio="0.75" ratioLeft="954" ratioRight="318" relationship="2" relative="org.eclipse.ui.internal.ViewStack@1a7bf26">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@62fcc6" ratio="0.6995134" ratioLeft="575" ratioRight="247" relationship="4" relative="org.eclipse.ui.internal.ViewStack@1a7bf26">&#x0A;<folder appearance="2" expanded="0">&#x0A;<page content="org.eclipse.debug.ui.BreakpointView" label="LabelNotFound"/>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@62fcc6" ratio="0.93453354" ratioLeft="571" ratioRight="40" relationship="4" relative="org.eclipse.ui.internal.ViewStack@1a7bf26">
+<folder appearance="2" expanded="0">
+<page content="org.eclipse.debug.ui.BreakpointView" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@182b7e9" ratio="0.5" ratioLeft="636" ratioRight="636" relationship="2" relative="org.eclipse.ui.internal.ViewStack@62fcc6">&#x0A;<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.views.ProgressView" label="Progress"/>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@182b7e9" ratio="0.5" ratioLeft="636" ratioRight="636" relationship="2" relative="org.eclipse.ui.internal.ViewStack@62fcc6">
+<folder activePageID="org.eclipse.debug.ui.DebugView" appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.ProgressView" label="Progress"/>
 <page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
 <page content="org.eclipse.debug.ui.DebugView" label="Debug"/>
 <page content="org.eclipse.debug.ui.ExpressionView" label="LabelNotFound"/>
 <page content="org.eclipse.debug.ui.MemoryView" label="LabelNotFound"/>
 <page content="org.eclipse.cdt.debug.ui.memory.memorybrowser.MemoryBrowser" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="1"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="1"/>
 <part id="0"/>
 <part id="2"/>
 </presentation>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@a9eb7c" ratio="0.5" ratioLeft="636" ratioRight="636" relationship="2" relative="org.eclipse.ui.internal.ViewStack@182b7e9">&#x0A;<folder activePageID="org.eclipse.debug.ui.VariableView" appearance="2" expanded="2">&#x0A;<page content="org.coocox.codebugger.trace.ui.traceview" label="Semihosting"/>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@a9eb7c" ratio="0.5" ratioLeft="636" ratioRight="636" relationship="2" relative="org.eclipse.ui.internal.ViewStack@182b7e9">
+<folder activePageID="org.eclipse.debug.ui.VariableView" appearance="2" expanded="2">
+<page content="org.coocox.codebugger.trace.ui.traceview" label="Semihosting"/>
 <page content="org.eclipse.debug.ui.VariableView" label="Variables"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
 <part id="1"/>
 </presentation>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@10a4c89" ratio="0.75" ratioLeft="954" ratioRight="318" relationship="2" relative="org.eclipse.ui.internal.ViewStack@1a7bf26">&#x0A;<folder appearance="2" expanded="2">&#x0A;<page content="org.eclipse.cdt.dsf.debug.ui.disassembly.view" label="LabelNotFound"/>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@10a4c89" ratio="0.75" ratioLeft="954" ratioRight="318" relationship="2" relative="org.eclipse.ui.internal.ViewStack@1a7bf26">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.cdt.dsf.debug.ui.disassembly.view" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.ContentOutline" label="LabelNotFound"/>
 <page content="org.eclipse.debug.ui.RegisterView" label="LabelNotFound"/>
 <page content="org.coocox.coassistant.view.CoAssistantView_debug" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
-<info part="org.eclipse.ui.editorss" ratio="0.29979035" ratioLeft="286" ratioRight="668" relationship="2" relative="org.eclipse.ui.internal.ViewStack@1a7bf26"/>
+<info part="org.eclipse.ui.editorss" ratio="0.29018614" ratioLeft="343" ratioRight="839" relationship="2" relative="org.eclipse.ui.internal.ViewStack@1a7bf26"/>
 </mainWindow>
 </layout>
 </perspective>
@@ -294,87 +362,162 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Blinky/Button.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Blinky/stm32f4xx_hal_conf.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Blinky/stm32f4xx.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Blinky/system_stm32f4xx.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Blinky/system_stm32f4xx.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Blinky/Time.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Blinky/Time.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Blinky/main.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Blinky/LED3.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Blinky/LED2.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Blinky/LED1.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Blinky/LED.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Blinky/Button.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Blinky/Hardware/stm32f4xx_hal.c"/>
-<editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" uri="file:/C:/Vennie/Projects/STM32F4/ARM-BlinkyLED/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Blinky/App/main.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Blinky/Hardware/stm32f4xx_hal_gpio.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.asm.AsmEditor" path="/Blinky/Config/startup_stm32f429xx.s"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Blinky/Hardware/stm32f4xx_hal_rcc.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Blinky/App/Gpio.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Blinky/App/Gpio.h"/>
 </editors>
-<item historyLabel="Button.c" index="0">
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="283" y="0"/>
+</item>
+<item historyLabel="stm32f4xx_hal_rcc.h" index="3">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="stm32f4xx_hal_conf.h" index="1">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="stm32f4xx_hal_rcc.h" index="3">
+<position info="not_deleted" x="342" y="0"/>
 </item>
-<item historyLabel="stm32f4xx.h" index="2">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="stm32f4xx_hal_rcc.h" index="3">
+<position info="not_deleted" x="21474" y="27"/>
 </item>
-<item historyLabel="system_stm32f4xx.c" index="3">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="stm32f4xx_hal_rcc.h" index="3">
+<position info="not_deleted" x="21561" y="27"/>
 </item>
-<item historyLabel="system_stm32f4xx.h" index="4">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="Gpio.c" index="4">
+<position info="not_deleted" x="397" y="17"/>
 </item>
-<item historyLabel="Time.c" index="5">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="Gpio.h" index="5">
+<position info="not_deleted" x="230" y="8"/>
 </item>
-<item historyLabel="Time.h" index="6">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="Gpio.c" index="4">
+<position info="not_deleted" x="267" y="0"/>
 </item>
-<item historyLabel="main.c" index="7">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="stm32f4xx_hal_rcc.h" index="3">
+<position info="not_deleted" x="21561" y="30"/>
 </item>
-<item historyLabel="LED3.c" index="8">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="stm32f4xx_hal_rcc.h" index="3">
+<position info="not_deleted" x="18724" y="0"/>
 </item>
-<item historyLabel="LED2.c" index="9">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="316" y="0"/>
 </item>
-<item historyLabel="LED1.c" index="10">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="Gpio.h" index="5">
+<position info="not_deleted" x="230" y="8"/>
 </item>
-<item historyLabel="LED.h" index="11">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="Gpio.c" index="4">
+<position info="not_deleted" x="448" y="0"/>
 </item>
-<item historyLabel="Button.h" index="12">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="stm32f4xx_hal_gpio.h" index="1">
+<position info="not_deleted" x="2085" y="0"/>
 </item>
-<item historyLabel="Button.c" index="0">
-<position info="not_deleted" x="378" y="0"/>
+<item historyLabel="stm32f4xx_hal_rcc.h" index="3">
+<position info="not_deleted" x="18724" y="0"/>
 </item>
-<item historyLabel="stm32f4xx_hal_conf.h" index="1">
-<position info="not_deleted" x="3819" y="0"/>
+<item historyLabel="stm32f4xx_hal_rcc.h" index="3">
+<position info="not_deleted" x="18300" y="26"/>
 </item>
-<item historyLabel="stm32f4xx_hal.c" index="13">
-<position info="not_deleted" x="8420" y="24"/>
+<item historyLabel="Gpio.c" index="4">
+<position info="not_deleted" x="29" y="17"/>
 </item>
-<item historyLabel="stm32f4xx_hal_conf.h" index="1">
-<position info="not_deleted" x="6175" y="0"/>
+<item historyLabel="stm32f4xx_hal_rcc.h" index="3">
+<position info="not_deleted" x="2514" y="33"/>
 </item>
-<item historyLabel="stm32f4xx_hal.c" index="13">
-<position info="not_deleted" x="8115" y="0"/>
+<item historyLabel="Gpio.c" index="4">
+<position info="not_deleted" x="51" y="0"/>
 </item>
-<item historyLabel="stm32f4xx_hal_conf.h" index="1">
-<position info="not_deleted" x="6175" y="0"/>
+<item historyLabel="startup_stm32f429xx.s" index="2">
+<position info="not_deleted" x="4375" y="0"/>
 </item>
-<item historyLabel="stm32f4xx_hal_conf.h" index="1">
-<position info="not_deleted" x="2944" y="0"/>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="312" y="0"/>
 </item>
-<item historyLabel="stm32f4xx_hal_conf.h" index="1">
-<position info="not_deleted" x="12721" y="36"/>
+<item historyLabel="Gpio.c" index="4">
+<position info="not_deleted" x="152" y="0"/>
 </item>
-<item active="true" historyLabel="stm32f4xx_hal_flash.h" index="14">
-<position info="not_deleted" x="13098" y="0"/>
+<item historyLabel="startup_stm32f429xx.s" index="2">
+<position info="not_deleted" x="4375" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="181" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="243" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="277" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="312" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="243" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="277" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="312" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="243" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="277" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="312" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="243" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="277" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="312" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="243" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="277" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="312" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="243" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="277" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="314" y="0"/>
+</item>
+<item historyLabel="Gpio.c" index="4">
+<position info="not_deleted" x="152" y="0"/>
+</item>
+<item historyLabel="Gpio.h" index="5">
+<position info="not_deleted" x="230" y="8"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="220" y="0"/>
+</item>
+<item historyLabel="Gpio.c" index="4">
+<position info="not_deleted" x="152" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="220" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position/>
+</item>
+<item historyLabel="Gpio.h" index="5">
+<position info="not_deleted" x="230" y="8"/>
+</item>
+<item active="true" historyLabel="Gpio.c" index="4">
+<position info="not_deleted" x="152" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -383,6 +526,24 @@
 <actionBarAdvisor/>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx_hal_rcc.h" tooltip="Blinky/Hardware/stm32f4xx_hal_rcc.h">
+<persistable path="/Blinky/Hardware/stm32f4xx_hal_rcc.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx_hal.h" tooltip="Blinky/Hardware/stm32f4xx_hal.h">
+<persistable path="/Blinky/Hardware/stm32f4xx_hal.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx_hal_gpio.h" tooltip="Blinky/Hardware/stm32f4xx_hal_gpio.h">
+<persistable path="/Blinky/Hardware/stm32f4xx_hal_gpio.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="system_stm32f4xx.c" tooltip="Blinky/Config/system_stm32f4xx.c">
+<persistable path="/Blinky/Config/system_stm32f4xx.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.asm.AsmEditor" name="startup_stm32f429xx.s" tooltip="Blinky/Config/startup_stm32f429xx.s">
+<persistable path="/Blinky/Config/startup_stm32f429xx.s"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f429xx.h" tooltip="Blinky/Config/stm32f429xx.h">
+<persistable path="/Blinky/Config/stm32f429xx.h"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.asm.AsmEditor" name="Scheduler.s" tooltip="Test01/Scheduler.s">
 <persistable path="/Test01/Scheduler.s"/>
 </file>
@@ -400,33 +561,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx_it.c" tooltip="Test01/stm32f4xx_it.c">
 <persistable path="/Test01/stm32f4xx_it.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.asm.AsmEditor" name="assembly.s" tooltip="Test01/assembly.s">
-<persistable path="/Test01/assembly.s"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="Time.c" tooltip="Test01/RTOS/Time.c">
-<persistable path="/Test01/RTOS/Time.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="LiteTasker.h" tooltip="Test01/RTOS/LiteTasker.h">
-<persistable path="/Test01/RTOS/LiteTasker.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="Led1SM.c" tooltip="Test01/LedAndButton/Led1SM.c">
-<persistable path="/Test01/LedAndButton/Led1SM.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="Time.h" tooltip="Test01/RTOS/Time.h">
-<persistable path="/Test01/RTOS/Time.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="UserLed.h" tooltip="Test01/LedAndButton/UserLed.h">
-<persistable path="/Test01/LedAndButton/UserLed.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.h" tooltip="Test01/main.h">
-<persistable path="/Test01/main.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="core_cm4.h" tooltip="Test01/Core/core_cm4.h">
-<persistable path="/Test01/Core/core_cm4.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx_hal_conf.h" tooltip="Blinky/stm32f4xx_hal_conf.h">
-<persistable path="/Blinky/stm32f4xx_hal_conf.h"/>
 </file>
 </mruList>
 </workbench>
