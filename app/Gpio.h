@@ -4,10 +4,11 @@
 #include <stdint.h>
 #include "stm32f4xx_hal_gpio.h"
 
+#define getGpioIndex(x)	(((uint32_t)(x) - (uint32_t)GPIOA_BASE_ADDRESS) / 0x400)
 #define GPIO_OUTPUT		GPIO_MODE_OUTPUT_PP
 #define GPIO_INPUT		GPIO_MODE_INPUT
 
-typedef struct GPIO_t GPIO;
+typedef struct GPIO_t GpioType;
 struct GPIO_t {
 	uint32_t MODER;
 	uint32_t OTYPER;
@@ -38,26 +39,27 @@ struct GPIO_t {
 #define PIN_14			14
 #define PIN_15			15
 
-#define GPIO_MODE_INPUT		0
-#define GPIO_MODE_OUTPUT	1
-#define GPIO_MODE_ALTFUNC	2
-#define GPIO_MODE_ANALOG	3
+#define PORT_MODE_INPUT		0
+#define PORT_MODE_OUTPUT	1
+#define PORT_MODE_ALTFUNC	2
+#define PORT_MODE_ANALOG	3
 
-#define GPIO_LOW_SPEED        0
-#define GPIO_MEDIUM_SPEED     1
-#define GPIO_HIGH_SPEED       2
-#define GPIO_VERY_HIGH_SPEED  3
+#define PORT_LOW_SPEED        0
+#define PORT_MEDIUM_SPEED     1
+#define PORT_HIGH_SPEED       2
+#define PORT_VERY_HIGH_SPEED  3
 
 #define GPIOG_BASE_ADDRESS	0x40021800
 #define GPIOC_BASE_ADDRESS	0x40020800
 #define GPIOB_BASE_ADDRESS	0x40020400
+#define GPIOA_BASE_ADDRESS	0x40020000
 
-#define PORTG   ((GPIO *)GPIOG_BASE_ADDRESS)
-#define PORTC   ((GPIO *)GPIOC_BASE_ADDRESS)
-#define PORTB   ((GPIO *)GPIOB_BASE_ADDRESS)
+#define PORTG   ((GpioType *)GPIOG_BASE_ADDRESS)
+#define PORTC   ((GpioType *)GPIOC_BASE_ADDRESS)
+#define PORTB   ((GpioType *)GPIOB_BASE_ADDRESS)
 
-void configurePin(int mode, int pinNum, GPIO *port);
-void writeOne(int pinNum, GPIO_TypeDef *port);
-void writeZero(int pinNum, GPIO_TypeDef *port);
+void configurePin(int mode, int pinNum, GpioType *port);
+void writeOne(int pinNum, GpioType *port);
+void writeZero(int pinNum, GpioType *port);
 
 #endif	// __Gpio_H__

@@ -80,7 +80,7 @@
     <File name="App/Time.c" path="app/Time.c" type="1"/>
     <File name="Hardware/stm32f4xx_hal_cortex.c" path="Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c" type="1"/>
     <File name="App/Button.h" path="app/Button.h" type="1"/>
-    <File name="App/LED2.c" path="app/LED2.c" type="1"/>
+    <File name="App/Rcc.h" path="app/Rcc.h" type="1"/>
     <File name="Core/core_cmSimd.h" path="Drivers/CMSIS/Include/core_cmSimd.h" type="1"/>
     <File name="Hardware/stm32f4xx_hal_rcc.h" path="Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h" type="1"/>
     <File name="Config/system_stm32f4xx.h" path="Config/system_stm32f4xx.h" type="1"/>
@@ -89,22 +89,20 @@
     <File name="Core/core_cmInstr.h" path="Drivers/CMSIS/Include/core_cmInstr.h" type="1"/>
     <File name="App/Gpio.c" path="app/Gpio.c" type="1"/>
     <File name="Config/system_stm32f4xx.c" path="Config/system_stm32f4xx.c" type="1"/>
-    <File name="App/LED.h" path="app/LED.h" type="1"/>
     <File name="App/Time.h" path="app/Time.h" type="1"/>
+    <File name="App/Rcc.c" path="app/Rcc.c" type="1"/>
     <File name="Config/stm32f4xx_hal_conf.h" path="Config/stm32f4xx_hal_conf.h" type="1"/>
     <File name="Hardware/stm32f4xx_hal_gpio.c" path="Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c" type="1"/>
     <File name="Core/core_cm4.h" path="Drivers/CMSIS/Include/core_cm4.h" type="1"/>
     <File name="App/Button.c" path="app/Button.c" type="1"/>
     <File name="Config/startup_stm32f429xx.s" path="Config/startup_stm32f429xx.s" type="1"/>
     <File name="Hardware/stm32f4xx_hal_def.h" path="Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h" type="1"/>
-    <File name="App/LED1.c" path="app/LED1.c" type="1"/>
     <File name="Hardware/stm32f4xx_hal_cortex.h" path="Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h" type="1"/>
     <File name="Hardware/stm32f4xx_hal_gpio.h" path="Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h" type="1"/>
     <File name="App/Gpio.h" path="app/Gpio.h" type="1"/>
     <File name="Hardware/stm32f4xx_hal_rcc.c" path="Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c" type="1"/>
     <File name="Core" path="" type="2"/>
     <File name="Config" path="" type="2"/>
-    <File name="App/LED3.c" path="app/LED3.c" type="1"/>
   </Files>
   <Bookmarks/>
 </Project>
