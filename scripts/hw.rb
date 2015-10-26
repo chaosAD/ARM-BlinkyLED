@@ -51,10 +51,21 @@ namespace :hw do
   #  sh "cp #{OUTPUT_FILE} ."
   end
 
-
   desc 'Flash program and run test'
   task :flash => :prepare_release do
     Rake::Task["build/release/hw/Blinky.hex"].invoke
     sys_cli FLASHER + '-P build/release/hw/Blinky.hex -V while_programming -Rst -Run'
+  end
+
+  desc "Just duplicating .gitignore"
+  task :ignore do
+    src = ".gitignore"
+    target = ".gitignoreXXX"
+    if !up_to_date?(target, src)
+      p "duplicating .gitignore"
+      sh "cp #{src} #{target}"
+    else
+      p "already have the latest copy..."
+    end
   end
 end
