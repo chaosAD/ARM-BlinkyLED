@@ -12,6 +12,7 @@ config = {
 # -IC:\Users\user26\CoIDE\workspace\RTOS
   :include_path => ['Drivers/CMSIS/Include',
                     'Drivers/STM32F4xx_HAL_Driver/Inc',
+                    'Config',
                     'app'],
   :user_define  => ['STM32F429ZI', 'STM32F429xx'],
   :library_path => '.',

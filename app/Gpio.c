@@ -1,9 +1,5 @@
 #include "Gpio.h"
-#include "stm32f4xx_hal_gpio.h"
-#include "stm32f4xx_hal_rcc.h"
-
-#define enableGpioG		(ptr[0x30/4] |= 1 << 6,	\
-						ptr[0x10/4] &= ~(1 << 6))
+#include "Rcc.h"
 
 void configurePin(int mode, int pinNum, GpioType *port) {
 //	GPIO_InitTypeDef GpioInfo;
@@ -11,8 +7,6 @@ void configurePin(int mode, int pinNum, GpioType *port) {
 //	__HAL_RCC_GPIOG_CLK_ENABLE();
 //	__HAL_RCC_GPIOC_CLK_ENABLE();
 //	__HAL_RCC_GPIOB_CLK_ENABLE();
-//	uint32_t *ptr = (uint32_t *)0x40023800;
-//	enableGpioG;
 
 	gpioUnresetEnableClock(port);
 //	gpioUnresetEnableClock(PORTC);
