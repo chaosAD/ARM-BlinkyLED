@@ -4,7 +4,7 @@ load "scripts/cbuild.rb"
 
 #FLASHER = "\"/C/Program Files (x86)/STMicroelectronics/STM32 ST-LINK Utility/ST-LINK Utility/ST-LINK_CLI\" "
 FLASHER = trim_string((flasher = ENV['flasher']) ? String.new(flasher):"ST-LINK_CLI")
-ELF_TO_HEX = trim_string((elf_to_hex = ENV['elf_to_hex']) ?  String.new(elf_to_hex):"arm-none-eabi-objcopy")
+ELF_TO_HEX = trim_string((elf_to_hex = ENV['elf_to_hex']) ? String.new(elf_to_hex):"arm-none-eabi-objcopy")
 
 # Configuration parameters
 config = {
@@ -33,15 +33,29 @@ config = {
 
 
 #OUTPUT_FILE = 'build/release/hw/Blinky.elf'
+OUTPUT_PATH = 'build/release/hw/'
 namespace :hw do
-  task :prepare_release do
-    filenames = getAllSrcFiles("Blinky.coproj")
+  ouput_elf = nil
+  ouput_hex = nil
+  task :prepare_release, [:coproj] do |t, args|
+    if((coproj = args[:coproj]) == nil)
+      coproj = FileList.new("./*.coproj").to_a
+      raise ArgumentError,                                                \
+          "Please specify the .coproj file: #{coproj}" if coproj.length > 1
+      raise ArgumentError,                                                \
+          "Error: No .coproj file given" if coproj.length == 0
+      coproj = coproj[0]
+    end
+    file = File.basename(coproj, '.coproj')
+    ouput_elf = File.join(OUTPUT_PATH, file + '.elf')
+    ouput_hex = File.join(OUTPUT_PATH, file + '.hex')
+    filenames = getAllSrcFiles(coproj)
     dep_list = createCompilationDependencyList(filenames, ['c', '.c++', '.s', 'cpp', 'asm'], '.', '.o')
-    dep_list = compile_list(dep_list, '.', 'build/release/hw', '.', config)
+    dep_list = compile_list(dep_list, '.', OUTPUT_PATH, '.', config)
   #  p dep_list
-    link_all(getDependers(dep_list), 'build/release/hw/Blinky.elf', config)
+    link_all(getDependers(dep_list), ouput_elf, config)
 
-    file 'build/release/hw/Blinky.hex' => 'build/release/hw/Blinky.elf' do |n|
+    file ouput_hex => ouput_elf do |n|
       if(find_executable(ELF_TO_HEX) == nil)
         puts "Error: Cannot find #{ELF_TO_HEX} program to turn ELF to HEX."
       else
@@ -53,19 +67,20 @@ namespace :hw do
 #  CLEAN.include('build/release/hw') if File.exist? 'build/release/hw'
 
   desc 'Build hardware release code'
-  task :release => :prepare_release do
+  task :release, [:coproj] => :prepare_release do |t, args|
   #  p Rake.application.tasks
-    Rake::Task['build/release/hw/Blinky.elf'].invoke
+
+    Rake::Task[ouput_elf].invoke(args)
   #  sh "cp #{OUTPUT_FILE} ."
   end
 
   desc 'Flash program and run test'
-  task :flash => :prepare_release do
-    Rake::Task["build/release/hw/Blinky.hex"].invoke
+  task :flash, [:coproj] => :prepare_release do |t, args|
+    Rake::Task[ouput_hex].invoke(args)
     if(find_executable(FLASHER) == nil)
-      puts "Error: Cannot find #{FLASHER} program to flash ARM processor."
+      puts "Error: Cannot find #{FLASHER} program to fflash ARM processor."
     else
-      sys_cli FLASHER + ' -P build/release/hw/Blinky.hex -V while_programming -Rst -Run'
+      sys_cli FLASHER + " -P #{ouput_hex} -V while_programming -Rst -Run"
     end
   end
 

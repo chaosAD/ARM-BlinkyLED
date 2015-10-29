@@ -97,14 +97,14 @@ def compile_list(list, src_path, obj_path, exe_path, config)
   # Get compiler
   raise ArgumentError,                                                  \
         "Error: Missing ':compiler' in the config"                      \
-                if (compiler = config[:compiler]) == nil
+                if (compiler = trim_string(config[:compiler])) == nil
   raise ArgumentError,                                                  \
         "Error: Cannot find #{compiler} to compile."                    \
                 if find_executable(compiler) == nil
   # Get linker
   raise ArgumentError,                                                  \
         "Error: Missing ':linker' in the config"                        \
-                if (linker = config[:linker]) == nil
+                if (linker = trim_string(config[:linker])) == nil
   raise ArgumentError,                                                  \
         "Error: Cannot find #{linker} to link files."                   \
                 if find_executable(linker) == nil
@@ -245,6 +245,7 @@ def getAllSrcFiles(coIdeProjectFile)
 end
 
 def trim_string(str)
+  return nil if str == nil
   str.gsub!(/^\s*/, "").gsub!(/\s*$/, "")
 end
 
