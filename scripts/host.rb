@@ -56,7 +56,7 @@ config = {
                     :include_path => '-I',
                     :output_file => '-o',
                     :compile => '-c',
-                    :linker_script => '-T',
+                    :linker_script => '-Wl,-T',
                     :define => '-D'}
 }
 

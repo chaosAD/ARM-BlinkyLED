@@ -1,4 +1,4 @@
-# Build script for C (ver 0.4)
+# Build script for C (ver 0.5)
 # Copyright (C) 2015 Poh Tze Ven, <pohtv@acd.tarc.edu.my>
 #
 # This file is part of C Compiler & Interpreter project.
@@ -14,6 +14,7 @@
 # You should have received a copy of the GNU General Public License
 # along with C Compiler & Interpreter.  If not, see <http://www.gnu.org/licenses/>.
 
+require 'mkmf'
 require 'rake/clean' if !(defined? CLEAN)
 require 'rexml/document'
 include REXML
@@ -93,6 +94,20 @@ def compile_list(list, src_path, obj_path, exe_path, config)
   opt_lib = config[:option_keys][:library]
   opt_lib_path = config[:option_keys][:library_path]
   opt_linker_script = config[:option_keys][:linker_script]
+  # Get compiler
+  raise ArgumentError,                                                  \
+        "Error: Missing ':compiler' in the config"                      \
+                if (compiler = config[:compiler]) == nil
+  raise ArgumentError,                                                  \
+        "Error: Cannot find #{compiler} to compile."                    \
+                if find_executable(compiler) == nil
+  # Get linker
+  raise ArgumentError,                                                  \
+        "Error: Missing ':linker' in the config"                        \
+                if (linker = config[:linker]) == nil
+  raise ArgumentError,                                                  \
+        "Error: Cannot find #{linker} to link files."                   \
+                if find_executable(linker) == nil
 
   list.each do |obj|
     # Append path to depender
@@ -110,10 +125,6 @@ def compile_list(list, src_path, obj_path, exe_path, config)
           dependees = n.prerequisites.select { |f|
             (f =~ /\.(?:s|asm|c|cpp|cc|c\+\+)$/i) && !(File.directory? f)
           }
-          # Get compiler
-          raise ArgumentError,                                                \
-                "Error: Missing ':compiler' in the config"                    \
-                if (compiler = config[:compiler]) == nil
           # Compile compiler options
           options = optionize(opt_inc_path, config[:include_path],            \
                       "Missing ':option_keys:include_path' in the config.") + \
@@ -139,10 +150,6 @@ def compile_list(list, src_path, obj_path, exe_path, config)
         file depender => dependees do |n|
           # Gather only dependee files (exclude directories)
           dependees = n.prerequisites.select { |f| !(File.directory? f) }
-          # Get linker
-          raise ArgumentError,                                                \
-                "Error: Missing ':linker' in the config"                      \
-                if (linker = config[:linker]) == nil
           # Compile linker options
           options = optionize(opt_lib_path, config[:library_path],            \
                       "Missing ':option_keys:library_path' in the config.") + \

@@ -1,8 +1,10 @@
-#FLASHER = "\"/C/Program Files (x86)/STMicroelectronics/STM32 ST-LINK Utility/ST-LINK Utility/ST-LINK_CLI\" "
-FLASHER = "ST-LINK_CLI.exe "
-
-# Load build script to help build C program
+require 'mkmf'
+# Load cbuild script to help build C program
 load "scripts/cbuild.rb"
+
+#FLASHER = "\"/C/Program Files (x86)/STMicroelectronics/STM32 ST-LINK Utility/ST-LINK Utility/ST-LINK_CLI\" "
+FLASHER = trim_string((flasher = ENV['flasher']) ? String.new(flasher):"ST-LINK_CLI")
+ELF_TO_HEX = trim_string((elf_to_hex = ENV['elf_to_hex']) ?  String.new(elf_to_hex):"arm-none-eabi-objcopy")
 
 # Configuration parameters
 config = {
@@ -29,6 +31,7 @@ config = {
                     :define => '-D'}
 }
 
+
 #OUTPUT_FILE = 'build/release/hw/Blinky.elf'
 namespace :hw do
   task :prepare_release do
@@ -39,8 +42,12 @@ namespace :hw do
     link_all(getDependers(dep_list), 'build/release/hw/Blinky.elf', config)
 
     file 'build/release/hw/Blinky.hex' => 'build/release/hw/Blinky.elf' do |n|
-      puts "converting #{n.prerequisites[0]} to hex..."
-      sys_cli "arm-none-eabi-objcopy -O ihex #{n.prerequisites[0]} #{n.name}"
+      if(find_executable(ELF_TO_HEX) == nil)
+        puts "Error: Cannot find #{ELF_TO_HEX} program to turn ELF to HEX."
+      else
+        puts "converting #{n.prerequisites[0]} to hex..."
+        sys_cli "#{ELF_TO_HEX} -O ihex #{n.prerequisites[0]} #{n.name}"
+      end
     end
   end
 #  CLEAN.include('build/release/hw') if File.exist? 'build/release/hw'
@@ -55,7 +62,11 @@ namespace :hw do
   desc 'Flash program and run test'
   task :flash => :prepare_release do
     Rake::Task["build/release/hw/Blinky.hex"].invoke
-    sys_cli FLASHER + '-P build/release/hw/Blinky.hex -V while_programming -Rst -Run'
+    if(find_executable(FLASHER) == nil)
+      puts "Error: Cannot find #{FLASHER} program to flash ARM processor."
+    else
+      sys_cli FLASHER + ' -P build/release/hw/Blinky.hex -V while_programming -Rst -Run'
+    end
   end
 
   desc "Just duplicating .gitignore"
