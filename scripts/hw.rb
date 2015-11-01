@@ -32,36 +32,27 @@ config = {
 }
 
 
-#OUTPUT_FILE = 'build/release/hw/Blinky.elf'
 OUTPUT_PATH = 'build/release/hw/'
 namespace :hw do
   ouput_elf = nil
   ouput_hex = nil
   task :prepare_release, [:coproj] do |t, args|
-    if((coproj = args[:coproj]) == nil)
-      coproj = FileList.new("./*.coproj").to_a
-      raise ArgumentError,                                                \
-          "Please specify the .coproj file: #{coproj}" if coproj.length > 1
-      raise ArgumentError,                                                \
-          "Error: No .coproj file given" if coproj.length == 0
-      coproj = coproj[0]
-    end
+    filenames, coproj = get_all_source_files_in_coproj(args[:coproj])
     file = File.basename(coproj, '.coproj')
     ouput_elf = File.join(OUTPUT_PATH, file + '.elf')
     ouput_hex = File.join(OUTPUT_PATH, file + '.hex')
-    filenames = getAllSrcFiles(coproj)
     dep_list = createCompilationDependencyList(filenames, ['c', '.c++', '.s', 'cpp', 'asm'], '.', '.o')
     dep_list = compile_list(dep_list, '.', OUTPUT_PATH, '.', config)
   #  p dep_list
     link_all(getDependers(dep_list), ouput_elf, config)
 
     file ouput_hex => ouput_elf do |n|
-      if(find_executable(ELF_TO_HEX) == nil)
+      if(program_available?(ELF_TO_HEX) == nil)
         puts "Error: Cannot find #{ELF_TO_HEX} program to turn ELF to HEX."
-      else
-        puts "converting #{n.prerequisites[0]} to hex..."
-        sys_cli "#{ELF_TO_HEX} -O ihex #{n.prerequisites[0]} #{n.name}"
+        exit
       end
+      puts "converting #{n.prerequisites[0]} to hex..."
+      sys_cli "#{ELF_TO_HEX} -O ihex #{n.prerequisites[0]} #{n.name}"
     end
   end
 #  CLEAN.include('build/release/hw') if File.exist? 'build/release/hw'
@@ -77,11 +68,11 @@ namespace :hw do
   desc 'Flash program and run test'
   task :flash, [:coproj] => :prepare_release do |t, args|
     Rake::Task[ouput_hex].invoke(args)
-    if(find_executable(FLASHER) == nil)
-      puts "Error: Cannot find #{FLASHER} program to fflash ARM processor."
-    else
-      sys_cli FLASHER + " -P #{ouput_hex} -V while_programming -Rst -Run"
+    if(program_available?(FLASHER) == nil)
+      puts "Error: Cannot find #{FLASHER} program to flash ARM processor."
+      exit
     end
+    sys_cli FLASHER + " -P #{ouput_hex} -V while_programming -Rst -Run"
   end
 
   desc "Just duplicating .gitignore"

@@ -19,6 +19,8 @@ require 'rake/clean' if !(defined? CLEAN)
 require 'rexml/document'
 include REXML
 
+$programs_found = {}
+
 # task :clobber => :clean do
   # puts "Clobbering. It may take sometime..."
 # end
@@ -100,14 +102,14 @@ def compile_list(list, src_path, obj_path, exe_path, config)
                 if (compiler = trim_string(config[:compiler])) == nil
   raise ArgumentError,                                                  \
         "Error: Cannot find #{compiler} to compile."                    \
-                if find_executable(compiler) == nil
+                if program_available?(compiler) == nil
   # Get linker
   raise ArgumentError,                                                  \
         "Error: Missing ':linker' in the config"                        \
                 if (linker = trim_string(config[:linker])) == nil
   raise ArgumentError,                                                  \
         "Error: Cannot find #{linker} to link files."                   \
-                if find_executable(linker) == nil
+                if program_available?(linker) == nil
 
   list.each do |obj|
     # Append path to depender
@@ -225,9 +227,21 @@ def getDependers(dependency_list)
   dependency_list.keys
 end
 
-def getAllSrcFiles(coIdeProjectFile)
+def find_coproj(coproj)
+  if(coproj == nil)
+    coproj = FileList.new("./*.coproj").to_a
+    raise ArgumentError,                                                \
+        "Please specify the .coproj file: #{coproj}" if coproj.length > 1
+    raise ArgumentError,                                                \
+        "Error: No .coproj file given" if coproj.length == 0
+    coproj = coproj[0]
+  end
+  return coproj
+end
+
+def get_all_source_files_in_coproj(coIdeProjectFile)
   list = []
-  xmlfile = File.new(coIdeProjectFile)
+  xmlfile = File.new(coproj = find_coproj(coIdeProjectFile))
   xmldoc = Document.new(xmlfile)
 
   # Now get the root element
@@ -241,7 +255,7 @@ def getAllSrcFiles(coIdeProjectFile)
     list << name if e.attributes["type"] == "1"
   }
 
-  return list
+  return list, coproj
 end
 
 def trim_string(str)
@@ -271,4 +285,9 @@ def up_to_date?(new, old)
     return true if File.mtime(new) > File.mtime(old)
   end
   return false
+end
+
+def program_available?(filename)
+  $programs_found[filename] = find_executable(filename) if !$programs_found.key? filename
+  return $programs_found[filename]
 end
