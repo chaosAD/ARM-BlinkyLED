@@ -28,6 +28,7 @@
     - -:test/support
   :source:
     - src/**
+    - -:src/Main/**
   :support:
     - test/support
 

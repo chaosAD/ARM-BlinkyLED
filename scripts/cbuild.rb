@@ -1,4 +1,4 @@
-# Build script for C (ver 0.5)
+# Build script for C (ver 0.6)
 # Copyright (C) 2015 Poh Tze Ven, <pohtv@acd.tarc.edu.my>
 #
 # This file is part of C Compiler & Interpreter project.
@@ -213,9 +213,8 @@ def compile_all(src_paths, obj_path, config)
 #      CLOBBER << depender
     end
 #    p dependency_list
-    return_list = compile_list(dependency_list, ".", obj_path, ".", config)
   end
-  return return_list
+  return return_list = compile_list(dependency_list, ".", obj_path, ".", config)
 end
 
 def link_all(obj_list, exe_path_and_name, config)

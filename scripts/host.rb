@@ -44,7 +44,7 @@ config = {
   :compiler     => 'gcc',
   :linker       => 'gcc',
   :include_path => [CEXCEPTION_PATH,
-                    'src'],
+                    'src', 'src/Main'],
 #  :user_define  => ['CEXCEPTION_USE_CONFIG_FILE'],
 #  :library_path => 'lib',
 #  :library => ['libusb'],
@@ -74,13 +74,14 @@ namespace :custom do
 end
 
 namespace :brute do
+  OBJ_OUTPUT_PATH = "build/release/host"
+  EXE_FILENAME = "build/release/Main.exe"
   desc 'Build brute release code'
   task :release do
-    dep_list = compile_list(exception_dependency, CEXCEPTION_PATH, 'build/release/hw', '.', config)
-    dep_list.merge!(compile_all(['src'], 'build/release/hw', config))
-    link_all(getDependers(dep_list), 'build/release/Main.exe', config)
-    Rake::Task["build/release/Main.exe"].invoke
-    sh ("cp build/release/Main.exe app/testdrive/Main.exe ")
+    dep_list = compile_list(exception_dependency, CEXCEPTION_PATH, OBJ_OUTPUT_PATH, '.', config)
+    dep_list.merge!(compile_all(['src', 'src/Main'], OBJ_OUTPUT_PATH, config))
+    link_all(getDependers(dep_list), EXE_FILENAME, config)
+    Rake::Task[EXE_FILENAME].invoke
 #    p Rake.application.tasks
 #    p Rake::Task.tasks
   end

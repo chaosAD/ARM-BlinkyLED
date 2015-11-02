@@ -32,8 +32,8 @@ config = {
 }
 
 
-OUTPUT_PATH = 'build/release/hw/'
 namespace :hw do
+  OUTPUT_PATH = 'build/release/hw/'
   ouput_elf = nil
   ouput_hex = nil
   task :prepare_release, [:coproj] do |t, args|
