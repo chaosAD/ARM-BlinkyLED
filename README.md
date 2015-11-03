@@ -17,6 +17,12 @@ rake hw:flash
 rake hw:release
 ```
 
+By default rake loads `project.yml` configuration file for Ceedling. You can override that by issuing `project=<yml_filename>`. E.g.,
+```
+rake project=./myproject.yml test:all
+```
+will load `myproject.yml` configuration file in the current directory and then run all tests.
+
 Release
 =======
 To build hardware `release` version, type:
