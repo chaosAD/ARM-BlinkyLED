@@ -1,4 +1,3 @@
-require 'mkmf'
 # Load cbuild script to help build C program
 load "scripts/cbuild.rb"
 

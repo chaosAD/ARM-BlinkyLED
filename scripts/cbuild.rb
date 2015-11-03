@@ -1,5 +1,5 @@
-# Build script for C (ver 0.6)
-# Copyright (C) 2015 Poh Tze Ven, <pohtv@acd.tarc.edu.my>
+# Build script for C (ver 0.7)
+# Copyright (C) 2015-2016 Poh Tze Ven <pohtv@acd.tarc.edu.my>
 #
 # This file is part of C Compiler & Interpreter project.
 #
@@ -96,6 +96,9 @@ def compile_list(list, src_path, obj_path, exe_path, config)
   opt_lib = config[:option_keys][:library]
   opt_lib_path = config[:option_keys][:library_path]
   opt_linker_script = config[:option_keys][:linker_script]
+  raise ArgumentError,                                                  \
+        "Error: There is nothing to compile."                           \
+                if list.empty?
   # Get compiler
   raise ArgumentError,                                                  \
         "Error: Missing ':compiler' in the config"                      \
@@ -193,6 +196,12 @@ def compile_all(src_paths, obj_path, config)
     src_paths = [src_paths]
   end
   src_paths.each do |path|
+    raise ArgumentError,                                   \
+        "Error: #{path} folder does not exist."            \
+                if !File.exist?(path)
+    raise ArgumentError,                                   \
+        "Error: #{path} is not a folder."                  \
+                if !File.directory?(path)
     file_list = FileList.new( File.join(path, '*.s'),      \
                               File.join(path, '*.asm'),    \
                               File.join(path, '*.c'),      \
