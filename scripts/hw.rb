@@ -1,9 +1,26 @@
+# This is a build script for STM32F429 Discovery ARM board
+#
+# References:
+# [1] "STM32 ST-LINK Utility software description", User manual UM0892, DocID16987 Rev 19, July 2015,
+#     ARM Ltd., (/assets/pdf/CD00262073.pdf)
+
 # Load cbuild script to help build C program
 load "scripts/cbuild.rb"
 
 #FLASHER = "\"/C/Program Files (x86)/STMicroelectronics/STM32 ST-LINK Utility/ST-LINK Utility/ST-LINK_CLI\" "
-FLASHER = trim_string((flasher = ENV['flasher']) ? String.new(flasher):"ST-LINK_CLI")
-ELF_TO_HEX = trim_string((elf_to_hex = ENV['elf_to_hex']) ? String.new(elf_to_hex):"arm-none-eabi-objcopy")
+FLASHER = get_value_from_env("flasher", "ST-LINK_CLI")
+ELF_TO_HEX = get_value_from_env("elf_to_hex", "arm-none-eabi-objcopy")
+
+# ST-LINK_CLI error code. They can be found in [1].
+ERR_ST_LINK_ARGS = 1
+ERR_ST_LINK_CONNECTION = 2
+ERR_ST_LINK_COMMAND = 3
+ERR_ST_LINK_RESET = 7
+ERR_ST_LINK_HALT = 8
+ERR_ST_LINK_STEP = 9
+ERR_ST_LINK_BREAKPOINT = 10
+ERR_ST_LINK_ERASE_FLASH = 11
+ERR_ST_LINK_PROG_VERIFY = 12
 
 # Configuration parameters
 config = {
@@ -13,7 +30,7 @@ config = {
 # -IC:\Users\user26\CoIDE\workspace\RTOS
   :include_path => ['Drivers/CMSIS/Include',
                     'Drivers/STM32F4xx_HAL_Driver/Inc',
-                    'Config',
+                    'app/Config',
                     'app'],
   :user_define  => ['STM32F429ZI', 'STM32F429xx'],
   :library_path => '.',
@@ -73,12 +90,17 @@ namespace :hw do
     end
     # First check if there is any differences between current Hex file with
     # the one on the MCU Flash. Download if there is, otherwise do nothing.
-    if !system "#{FLASHER} -CmpFile #{ouput_hex}"
+    if (!system "#{FLASHER} -CmpFile #{ouput_hex}") && ($?.exitstatus != ERR_ST_LINK_CONNECTION)
       # Flash the Hex file into the MCU Flash
       sys_cli "#{FLASHER} -P #{ouput_hex} -V while_programming -Rst -Run"
     end
   end
 
+  desc 'Erase all Flash sectors'
+  task :full_erase do
+    sys_cli "#{FLASHER} -ME"
+  end  
+  
   desc "Just duplicating .gitignore"
   task :ignore do
     src = ".gitignore"

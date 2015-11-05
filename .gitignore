@@ -3,3 +3,5 @@ build/*
 !build/README.txt
 arm-gcc-link.ld
 mkmf.log
+*.cogui
+*.comarker

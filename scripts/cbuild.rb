@@ -1,4 +1,4 @@
-# Build script for C (ver 0.7)
+# Build script for C (ver 0.8)
 # Copyright (C) 2015-2016 Poh Tze Ven <pohtv@acd.tarc.edu.my>
 #
 # This file is part of C Compiler & Interpreter project.
@@ -298,4 +298,8 @@ end
 def program_available?(filename)
   $programs_found[filename] = find_executable(filename) if !$programs_found.key? filename
   return $programs_found[filename]
+end
+
+def get_value_from_env(name, default_value)
+  trim_string((flasher = ENV[name]) ? String.new(flasher):default_value)
 end

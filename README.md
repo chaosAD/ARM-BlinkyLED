@@ -59,3 +59,10 @@ Since the command depends on `hw:release`, you might need to specify the `coproj
 ```
 rake hw:flash[Blinky02.coproj]
 ```
+
+Flash Erase
+==========
+To perform full (flash) chip erase, type:
+```
+rake hw:full_erase
+```
