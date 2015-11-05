@@ -71,7 +71,12 @@ namespace :hw do
       puts "Error: Cannot find #{FLASHER} program to flash ARM processor."
       exit
     end
-    sys_cli FLASHER + " -P #{ouput_hex} -V while_programming -Rst -Run"
+    # First check if there is any differences between current Hex file with
+    # the one on the MCU Flash. Download if there is, otherwise do nothing.
+    if !system "#{FLASHER} -CmpFile #{ouput_hex}"
+      # Flash the Hex file into the MCU Flash
+      sys_cli "#{FLASHER} -P #{ouput_hex} -V while_programming -Rst -Run"
+    end
   end
 
   desc "Just duplicating .gitignore"

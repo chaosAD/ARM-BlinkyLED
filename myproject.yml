@@ -20,7 +20,7 @@
 :environment:
 
 :extension:
-  :executable: .out
+  :executable: .exe
 
 :paths:
   :test:
@@ -28,9 +28,28 @@
     - -:test/support
   :source:
     - src/**
-    - -:src/Main/**
   :support:
     - test/support
+
+:tools:
+  :test_compiler:
+    :executable: gcc
+    :name: 'test compiler'
+    :arguments:
+      - -I"$": COLLECTION_PATHS_TEST_TOOLCHAIN_INCLUDE              #expands to -I search paths
+      - -I"$": COLLECTION_PATHS_TEST_SUPPORT_SOURCE_INCLUDE_VENDOR  #expands to -I search paths
+      - -Ilib/include
+      - -c ${1}                                                     #source code input file (Ruby method call param list sub)
+      - -o ${2}                                                     #object file output (Ruby method call param list sub)
+
+  :test_linker:
+    :executable: gcc
+    :name: 'test linker'
+    :arguments:
+      - ${1} #list of object files to link (Ruby method call param list sub)
+      - -ljansson
+      - -Llib/lib
+      - -o ${2} #executable file output (Ruby method call param list sub)
 
 :defines:
   # in order to add common defines:
@@ -39,10 +58,10 @@
   :commmon: &common_defines []
   :test:
     - *common_defines
-    - TEST
+    - TEST=
   :test_preprocess:
     - *common_defines
-    - TEST
+    - TEST=
 
 :cmock:
   :mock_prefix: mock_
