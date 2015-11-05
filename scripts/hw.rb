@@ -54,7 +54,8 @@ namespace :hw do
   ouput_hex = nil
   task :prepare_release, [:coproj] do |t, args|
     filenames, coproj = get_all_source_files_in_coproj(args[:coproj])
-    file = File.basename(coproj, '.coproj')
+    puts "Building sources in #{coproj}..."
+    file = File.basename(coproj, '.*')
     ouput_elf = File.join(OUTPUT_PATH, file + '.elf')
     ouput_hex = File.join(OUTPUT_PATH, file + '.hex')
     dep_list = createCompilationDependencyList(filenames, ['c', '.c++', '.s', 'cpp', 'asm'], '.', '.o')
