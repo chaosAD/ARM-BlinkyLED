@@ -90,12 +90,12 @@
     <File name="App/Gpio.c" path="app/Gpio.c" type="1"/>
     <File name="Config/system_stm32f4xx.c" path="app/Config/system_stm32f4xx.c" type="1"/>
     <File name="App/Time.h" path="app/Time.h" type="1"/>
-    <File name="App/Rcc.c" path="app/Rcc.c" type="1"/>
-    <File name="Hardware/stm32f4xx_hal_gpio.c" path="Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c" type="1"/>
     <File name="Config/stm32f4xx_hal_conf.h" path="app/Config/stm32f4xx_hal_conf.h" type="1"/>
+    <File name="Hardware/stm32f4xx_hal_gpio.c" path="Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c" type="1"/>
+    <File name="App/Rcc.c" path="app/Rcc.c" type="1"/>
     <File name="Core/core_cm4.h" path="Drivers/CMSIS/Include/core_cm4.h" type="1"/>
-    <File name="Config/startup_stm32f429xx.s" path="app/Config/startup_stm32f429xx.s" type="1"/>
     <File name="App/Button.c" path="app/Button.c" type="1"/>
+    <File name="Config/startup_stm32f429xx.s" path="app/Config/startup_stm32f429xx.s" type="1"/>
     <File name="Hardware/stm32f4xx_hal_def.h" path="Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h" type="1"/>
     <File name="Hardware/stm32f4xx_hal_cortex.h" path="Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h" type="1"/>
     <File name="Hardware/stm32f4xx_hal_gpio.h" path="Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h" type="1"/>

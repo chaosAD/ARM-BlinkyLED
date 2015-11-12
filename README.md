@@ -35,7 +35,7 @@ The command above only works if there is **exactly** one `.coproj` file in the c
 ```
 rake hw:release[project/Blinky.coproj]
 ```
-Similarly, if there arem any `coproj` files in the current directory, you need to specify which one `coproj` file to be used for building.
+Similarly, if there are many `coproj` files in the current directory, you need to specify which one `coproj` file to be used for building.
 
 Flash
 =====
@@ -66,3 +66,18 @@ To perform full (flash) chip erase, type:
 ```
 rake hw:full_erase
 ```
+
+Loading Additional Scripts
+=====================
+Sometimes there is a need to load extra scripts from YAML file. There is `load_extra_scripts()` function in `helper.rb` that helps do just that. The following shows how to load the scripts from YAML file.
+```
+load_extra_scripts('project.yml')
+```
+And the YAML file should contain `:project:load_scripts` like below:
+```
+---
+:project:
+  :load_scripts: [scripts/hw.rb, scripts/host.rb]
+---
+```
+where `scripts/hw.rb` and `scripts/host.rb` are the additional scripts to load. If `:load_scripts` does not exist, the function will just return silently.

@@ -5,7 +5,7 @@
 #     ARM Ltd., (/assets/pdf/CD00262073.pdf)
 
 # Load cbuild script to help build C program
-load "scripts/cbuild.rb"
+load "#{File.dirname(__FILE__)}/cbuild.rb"
 
 #FLASHER = "\"/C/Program Files (x86)/STMicroelectronics/STM32 ST-LINK Utility/ST-LINK Utility/ST-LINK_CLI\" "
 FLASHER = get_value_from_env("flasher", "ST-LINK_CLI")
@@ -32,7 +32,7 @@ config = {
                     'Drivers/STM32F4xx_HAL_Driver/Inc',
                     'app/Config',
                     'app'],
-  :user_define  => ['STM32F429ZI', 'STM32F429xx'],
+  :user_define  => ['STM32F429ZI', 'STM32F429xx', 'STM32F429_439xx'],
   :library_path => '.',
 #  :library => ['libusb'],
   :linker_script => 'stm32f429zi_flash.ld',
@@ -68,8 +68,13 @@ namespace :hw do
         puts "Error: Cannot find #{ELF_TO_HEX} program to turn ELF to HEX."
         exit
       end
-      puts "converting #{n.prerequisites[0]} to hex..."
-      sys_cli "#{ELF_TO_HEX} -O ihex #{n.prerequisites[0]} #{n.name}"
+      if File.exists? n.prerequisites[0]
+        puts "converting #{n.prerequisites[0]} to hex..."
+        sys_cli "#{ELF_TO_HEX} -O ihex #{n.prerequisites[0]} #{n.name}"
+      else
+        raise ArgumentError,                                                  \
+        "Error: Can't convert to #{n.name} because can't find #{n.prerequisites[0]}."
+      end
     end
   end
 #  CLEAN.include('build/release/hw') if File.exist? 'build/release/hw'
@@ -93,15 +98,16 @@ namespace :hw do
     # the one on the MCU Flash. Download if there is, otherwise do nothing.
     if (!system "#{FLASHER} -CmpFile #{ouput_hex}") && ($?.exitstatus != ERR_ST_LINK_CONNECTION)
       # Flash the Hex file into the MCU Flash
-      sys_cli "#{FLASHER} -P #{ouput_hex} -V while_programming -Rst -Run"
+      sys_cli "#{FLASHER} -P #{ouput_hex} -V while_programming -Rst -Run" \
+                                                  if File.exists? ouput_hex
     end
   end
 
   desc 'Erase all Flash sectors'
   task :full_erase do
     sys_cli "#{FLASHER} -ME"
-  end  
-  
+  end
+
   desc "Just duplicating .gitignore"
   task :ignore do
     src = ".gitignore"
