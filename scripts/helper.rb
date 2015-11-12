@@ -1,6 +1,8 @@
 require 'yaml'
 
 def load_extra_scripts(project_file)
+  raise ArgumentError, "Error: Can't find #{project_file} file."        \
+                                          if !File.exist?(project_file)
   content = YAML.load_file project_file
   scripts_to_load = content[:project][:load_scripts]
   if scripts_to_load

@@ -8,8 +8,7 @@ load "scripts/helper.rb"
 #     rake project=./myproject.yml test:all
 #
 project_file = get_value_from_env('project', './project.yml')
-raise ArgumentError, "Error: #{project_file} does not exist."           \
-                                          if !File.exist?(project_file)
+
 Ceedling.load_project(config: project_file)
 load_extra_scripts(project_file)
 
