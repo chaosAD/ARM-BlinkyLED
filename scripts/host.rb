@@ -2,7 +2,7 @@
 CEXCEPTION_PATH = "vendor/ceedling/vendor/c_exception/lib"
 
 # Load build script to help build C program
-load "#{File.dirname(__FILE__)}/cbuild.rb"
+load File.join(File.dirname(__FILE__), 'cbuild.rb')
 
 # Main dependency list
 main_dependency = {

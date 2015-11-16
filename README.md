@@ -52,7 +52,18 @@ rake hw:flash flasher=/c/STM/stlink/ST_FLASHER
 
 GCC compiles and links C/C++ files to ELF executable. Unfortunately, `ST-LINK_CLI` lacks the ability to read such file, but only HEX or BIN file. The good news is, the translation can be done by `arm-none-eabi-objcopy`. The `rake hw:flash` command automatically performs this and assumes that the program is in the Bash path. If the name or the path needs to be specified, you can issue:
 ```
-rake hw:flash elf_to_hex="/e/ProgramFiles/GNU Tools ARM Embedded/4.9 2015q1/bin/arm-none-eabi-objcopy"
+# For *nix
+rake hw:flash elf_to_hex="/C/ProgramFiles/GNU Tools ARM Embedded/4.9 2015q1/bin/arm-none-eabi-objcopy"
+```
+or
+```
+# For Windows
+rake hw:flash elf_to_hex="C:/ProgramFiles/GNU Tools ARM Embedded/4.9 2015q1/bin/arm-none-eabi-objcopy"
+```
+or
+```
+# For Windows
+rake hw:flash elf_to_hex="C:\\ProgramFiles\\GNU Tools ARM Embedded\\4.9 2015q1\\bin\\arm-none-eabi-objcopy"
 ```
 
 Since the command depends on `hw:release`, you might need to specify the `coproj` file explictly if there is conflict (refer to Release). E.g.,

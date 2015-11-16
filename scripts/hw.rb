@@ -5,11 +5,11 @@
 #     ARM Ltd., (/assets/pdf/CD00262073.pdf)
 
 # Load cbuild script to help build C program
-load "#{File.dirname(__FILE__)}/cbuild.rb"
+load File.join(File.dirname(__FILE__), 'cbuild.rb')
 
-#FLASHER = "\"/C/Program Files (x86)/STMicroelectronics/STM32 ST-LINK Utility/ST-LINK Utility/ST-LINK_CLI\" "
-FLASHER = get_value_from_env("flasher", "ST-LINK_CLI")
-ELF_TO_HEX = get_value_from_env("elf_to_hex", "arm-none-eabi-objcopy")
+#flasher = "/C/Program Files (x86)/STMicroelectronics/STM32 ST-LINK Utility/ST-LINK Utility/ST-LINK_CLI"
+flasher = get_value_from_env("flasher", "ST-LINK_CLI")
+elf_to_hex = get_value_from_env("elf_to_hex", "arm-none-eabi-objcopy")
 
 # ST-LINK_CLI error code. They can be found in [1].
 ERR_ST_LINK_ARGS = 1
@@ -64,13 +64,11 @@ namespace :hw do
     link_all(getDependers(dep_list), ouput_elf, config)
 
     file ouput_hex => ouput_elf do |n|
-      if(program_available?(ELF_TO_HEX) == nil)
-        puts "Error: Cannot find #{ELF_TO_HEX} program to turn ELF to HEX."
-        exit
-      end
+      elf_to_hex = ensure_program_available(elf_to_hex,                       \
+              "Error: Cannot find #{elf_to_hex} program to turn ELF to HEX.")
       if File.exists? n.prerequisites[0]
         puts "converting #{n.prerequisites[0]} to hex..."
-        sys_cli "#{ELF_TO_HEX} -O ihex #{n.prerequisites[0]} #{n.name}"
+        sys_cli "#{elf_to_hex} -O ihex #{n.prerequisites[0]} #{n.name}"
       else
         raise ArgumentError,                                                  \
         "Error: Can't convert to #{n.name} because can't find #{n.prerequisites[0]}."
@@ -90,22 +88,22 @@ namespace :hw do
   desc 'Flash program and run test'
   task :flash, [:coproj] => :prepare_release do |t, args|
     Rake::Task[ouput_hex].invoke(args)
-    if(program_available?(FLASHER) == nil)
-      puts "Error: Cannot find #{FLASHER} program to flash ARM processor."
-      exit
-    end
+    flasher = ensure_program_available(flasher,                             \
+              "Error: Cannot find #{flasher} program to flash ARM processor.")
     # First check if there is any differences between current Hex file with
     # the one on the MCU Flash. Download if there is, otherwise do nothing.
-    if (!system "#{FLASHER} -CmpFile #{ouput_hex}") && ($?.exitstatus != ERR_ST_LINK_CONNECTION)
+    if (!system "#{flasher} -CmpFile #{ouput_hex}") && ($?.exitstatus != ERR_ST_LINK_CONNECTION)
       # Flash the Hex file into the MCU Flash
-      sys_cli "#{FLASHER} -P #{ouput_hex} -V while_programming -Rst -Run" \
+      sys_cli "#{flasher} -P #{ouput_hex} -V while_programming -Rst -Run" \
                                                   if File.exists? ouput_hex
     end
   end
 
   desc 'Erase all Flash sectors'
   task :full_erase do
-    sys_cli "#{FLASHER} -ME"
+    flasher = ensure_program_available(flasher,                             \
+              "Error: Cannot find #{flasher} program to full chip erase.")
+    sys_cli "#{flasher} -ME"
   end
 
   desc "Just duplicating .gitignore"

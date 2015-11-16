@@ -10,6 +10,9 @@ load "scripts/helper.rb"
 project_file = get_value_from_env('project', './project.yml')
 
 Ceedling.load_project(config: project_file)
+#p @ceedling[:project_config_manager].config_hash   # Contain the loaded YAML file's content
+
+# The following must be loaded after Ceedling.load_project()
 load_extra_scripts(project_file)
 
 task :default => %w[ test:all release ]
