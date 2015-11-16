@@ -57,14 +57,14 @@ def program_available?(filename)
     else
       find_executable(name)
     end if !$programs_found.key? filename
-#  p $programs_found[filename]
   $programs_found[filename]
 end
 
-# @desc Ensure the program is available and put the filename into native form
+# @desc   Ensure the program is available and put the filename into native form
 # @param  filename is the name of the program to verify
 # @param  error_msg is the message enclosed in an exception if file not
 #         available
+# @return native path name enclosed in double quotations
 def ensure_program_available(filename, error_msg)
   raise ArgumentError, error_msg if program_available?(to_unix_path filename) == nil
   '"' + to_native_path(filename) + '"'
