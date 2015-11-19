@@ -32,12 +32,14 @@ config = {
                     'Drivers/STM32F4xx_HAL_Driver/Inc',
                     'app/Config',
                     'app'],
-  :user_define  => ['STM32F429ZI', 'STM32F429xx', 'STM32F429_439xx'],
+  :user_define  => ['STM32F429ZI', 'STM32F429xx', 'STM32F429_439xx', '__FPU_USED'],
   :library_path => '.',
 #  :library => ['libusb'],
   :linker_script => 'stm32f429zi_flash.ld',
-  :compiler_options => ['-mcpu=cortex-m4 -mthumb -g2 -Wall -O0 -g'],          # Other compiler options
-  :linker_options => ['-mcpu=cortex-m4 -mthumb -g2 -O0 -Wl,--gc-sections'],   # Other linker options
+#  :compiler_options => ['-mcpu=cortex-m4 -mthumb -g2 -Wall -O0 -g'],          # Other compiler options
+  :compiler_options => ['-mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -g2 -Wall -O0 -g'],          # Other compiler options
+#  :linker_options => ['-mcpu=cortex-m4 -mthumb -g2 -O0 -Wl,--gc-sections'],   # Other linker options
+  :linker_options => ['-mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -g2 -O0 -Wl,--gc-sections'],   # Other linker options
   :option_keys  => {:library => '-l',
                     :library_path => '-L',
                     :include_path => '-I',

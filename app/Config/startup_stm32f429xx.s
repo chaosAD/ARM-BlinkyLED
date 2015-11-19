@@ -45,11 +45,13 @@
     
   .syntax unified
   .cpu cortex-m4
-  .fpu softvfp
+//  .fpu softvfp
+  .fpu  fpv4-sp-d16
   .thumb
 
 .global  g_pfnVectors
 .global  Default_Handler
+
 
 /* start address for the initialization values of the .data section. 
 defined in linker script */
@@ -65,6 +67,13 @@ defined in linker script */
 /* stack used for SystemInit_ExtMemCtl; always internal RAM used */
 
 /**
+ * Data section
+ */
+      .section  .data
+result:
+  .word 0
+
+/**
  * @brief  This is the code that gets called when the processor first
  *          starts execution following a reset event. Only the absolutely
  *          necessary set is performed, after which the application
@@ -72,7 +81,6 @@ defined in linker script */
  * @param  None
  * @retval : None
 */
-
     .section  .text.Reset_Handler
   .weak  Reset_Handler
   .type  Reset_Handler, %function
@@ -107,13 +115,57 @@ LoopFillZerobss:
   cmp  r2, r3
   bcc  FillZerobss
 
+  // Enable floating point
+  ldr             r0, =0xe000ed88   // Enable CP10,CP11
+  ldr             r1, [r0]
+  orr             r1, r1, #(0xf << 20)
+  str             r1, [r0]
+
+  bl              waitTemporarily   // Seems like have to wait temporarily
+                                    // for FPU to be enabled...
+
+  // Do simple floating point math
+  vldr.f32        s0, value1    // s0 = 5.5
+  vldr.f32        s1, value2    // s1 = 3.25
+  vadd.f32        s2, s0, s1    // s2 = s0 + s1
+  ldr             r7, =result
+  vstr.f32        s2, [r7]      // Store the floating point result in 'result'
+  ldr             r1, [r7]      // Transfer result to 1
+  vcvt.s32.f32    s3, s2        // Convert to integer s3 = (int)s2
+  vmov            r0, s3        // Copy to ARM register
+
+  vldr.f32        s3, value1    // s3 = 5.5
+  vmla.f32        s3, s0, s1    // s3 += s0 * s1
+  vstr.f32        s3, [r7]      // Store the floating point result in 'result'
+  ldr             r1, [r7]      // Transfer result to 1 (=23.375)
+
+  eor             r0, r0        // r0 = 0
+  vmov            s3, r0        // s3 = 0.0
+  vmla.f32        s3, s0, s1    // s3 += s0 * s1
+  vstr.f32        s3, [r7]      // Store the floating point result in 'result'
+  ldr             r1, [r7]      // Transfer result to 1 (=17.875)
+
 /* Call the clock system intitialization function.*/
   bl  SystemInit   
 /* Call static constructors */
     bl __libc_init_array
 /* Call the application's entry point.*/
   bl  main
-  bx  lr    
+  bx  lr
+
+waitTemporarily:
+  ldr             r0, =#1000000
+again:
+  subs            r0, #1
+  bne             again
+  bx              lr
+
+.align 4
+value1:
+  .word 0x40b00000
+value2:
+  .word 0x40500000
+
 .size  Reset_Handler, .-Reset_Handler
 
 /**
@@ -556,6 +608,3 @@ g_pfnVectors:
    .thumb_set DMA2D_IRQHandler,Default_Handler
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/		
- 
-   
-   
