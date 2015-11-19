@@ -15,4 +15,10 @@ Ceedling.load_project(config: project_file)
 # The following must be loaded after Ceedling.load_project()
 load_extra_scripts(project_file)
 
-task :default => %w[ test:all release ]
+desc 'Build and deploy'
+task :build_and_deploy do
+  # Build and deploy
+  system "rake project=myproject.yml hw:flash"
+end
+
+task :default => %w[ build_and_deploy test:all ]
